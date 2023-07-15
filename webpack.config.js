@@ -18,10 +18,28 @@ const config = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: 'defaults' }],
-              '@babel/preset-react',
+              ['@babel/preset-react', { 'runtime': 'automatic' }],
             ],
           },
         },
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ],
       },
     ],
   },
@@ -32,9 +50,11 @@ const config = {
     compress: true,
     port: 3000,
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
+  ],
 };
 
 module.exports = config;
