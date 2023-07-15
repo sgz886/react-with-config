@@ -1,20 +1,16 @@
-// const App = () => React.createElement(
-//   'div',
-//   { className: 'py-12 flex justify-center' },
-//   React.createElement(
-//     'p',
-//     { className: 'text-3xl' },
-//     'hello world!',
-//   ),
-//   React.createElement(LikeButton),
-// );
+// import React from 'react';
 import LikeButton from './components/LikeButton';
+
 const App = () => {
+  const [message, setMessage] = React.useState('my 1st from zero');
   return (
-    <div className='py-12 flex justify-center'>
-      <p className='text-3xl mr-2'>hello world!</p>
+    <div className="py-12 flex flex-col justify-center">
+      <div><p className="text-3xl mr-2">{message}</p>
+        <input type="text" value={message}
+               onChange={e => setMessage(e.target.value)} />
+      </div>
       <LikeButton />
     </div>
-  )
+  );
 };
 export default App;
