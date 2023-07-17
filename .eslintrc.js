@@ -23,5 +23,6 @@ module.exports = {
   },
   ignorePatterns: ['dist/**', 'node_modules/**'],
   rules: {
+    'no-restricted-exports': 'off',
   },
 };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LikeButton from './components/LikeButton';
+import LikeButton from './components';
 
 function App() {
   const [message, setMessage] = useState('my 1st from zero');
