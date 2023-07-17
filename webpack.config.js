@@ -3,7 +3,7 @@ const path = require('path');
 
 const config = {
   // mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -18,7 +18,7 @@ const config = {
           options: {
             presets: [
               ['@babel/preset-env', { targets: 'defaults' }],
-              ['@babel/preset-react', { 'runtime': 'automatic' }],
+              ['@babel/preset-react', { runtime: 'automatic' }],
             ],
           },
         },
@@ -67,6 +67,9 @@ const config = {
       template: 'index.html',
     }),
   ],
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+  },
 };
 
 module.exports = config;
