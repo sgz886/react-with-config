@@ -2,7 +2,7 @@ import { useState } from 'react';
 import LikeButton from './components';
 
 function App() {
-  const [message, setMessage] = useState('my 1st from zero');
+  const [message, setMessage] = useState('new branch want to merge');
   return (
     <div className="py-12 flex flex-col justify-center">
       <div>
