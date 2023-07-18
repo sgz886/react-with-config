@@ -5,14 +5,13 @@ function LikeButton() {
 
   return (
     <button
-      type="button"
-      className="border px-4 py-2 rounded"
+      type='button'
+      className='border px-4 py-2 rounded'
       onClick={() => setCount((value) => value + 1)}
     >
-      Like
-      {' '}
-      {count}
+      Like {count}
     </button>
   );
 }
+
 export default LikeButton;
